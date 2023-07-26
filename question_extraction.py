@@ -52,6 +52,18 @@ class QuestionExtractor:
         self.form_questions()
 
         return self.questions_dict
+
+    def get_filtered_sentences(self, document):
+        ''' Returns a list of sentences - each of
+        which has been cleaned of stopwords.
+        Params:
+                * document: a paragraph of sentences
+        Returns:
+                * list<str> : list of string
+        '''
+        sentences = sent_tokenize(document)  # split documents into sentences
+
+        return [self.filter_sentence(sentence) for sentence in sentences]
       
 
     def filter_sentence(self, sentence):
