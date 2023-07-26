@@ -18,6 +18,26 @@ class QuestionGeneration:
         self.num_options = num_options
         self.question_extractor = QuestionExtractor(num_questions)
 
+    def clean_text(self, text):
+        text = text.replace('\n', ' ')  # remove newline chars
+        sentences = sent_tokenize(text)
+        cleaned_text = ""
+        for sentence in sentences:
+            # remove non alphanumeric chars
+            cleaned_sentence = re.sub(r'([^\s\w]|_)+', '', sentence)
+
+            # substitute multiple spaces with single space
+            cleaned_sentence = re.sub(' +', ' ', cleaned_sentence)
+            cleaned_text += cleaned_sentence
+
+            if cleaned_text[-1] == ' ':
+                cleaned_text[-1] = '.'
+            else:
+                cleaned_text += '.'
+
+            cleaned_text += ' '  # pad with space at end
+        return cleaned_text
+
 
     def generate_questions_dict(self, document):
         document = self.clean_text(document)
