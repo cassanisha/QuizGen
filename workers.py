@@ -12,6 +12,8 @@ def pdf2text(file_path: str, file_exten: str) -> str:
         with open(file_path, 'rb') as pdf_file:
             _pdf_reader = PdfFileReader(pdf_file)
             for p in range(_pdf_reader.numPages):
+                 _content += _pdf_reader.getPage(p).extractText()
+            # _content = _pdf_reader.getPage(0).extractText()
             print('PDF operation done!')
 
     elif file_exten == 'txt':
