@@ -3,11 +3,11 @@ from question_generation_main import QuestionGeneration
 
 
 def pdf2text(file_path: str, file_exten: str) -> str:
-    
+    """ Converts a given file to text content """
 
     _content = ''
 
-    
+    # Identify file type and get its contents
     if file_exten == 'pdf':
         with open(file_path, 'rb') as pdf_file:
             _pdf_reader = PdfFileReader(pdf_file)
@@ -25,7 +25,7 @@ def pdf2text(file_path: str, file_exten: str) -> str:
 
 
 def txt2questions(doc: str, n=5, o=4) -> dict:
-    
+    """ Get all questions and options """
     qGen = QuestionGeneration(n, o)
     q = qGen.generate_questions_dict(doc)
     for i in range(len(q)):
@@ -33,5 +33,5 @@ def txt2questions(doc: str, n=5, o=4) -> dict:
         for j in range(len(q[i + 1]['options'])):
             temp.append(q[i + 1]['options'][j + 1])
         
-        q[i + 1]['options'] = temp
+        q[i + 1]['options'] = temp 
     return q
