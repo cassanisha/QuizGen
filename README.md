@@ -47,3 +47,42 @@ This is a smart Quiz Generator that generates a dynamic quiz from any uploaded t
 | 1.    | [master] | contains the main code             |
 | 2.    | [nlp]    | contains all machine learning code |
 | 3.    | [webapp] | contains all frontend/backend code |
+
+### Setup
+
+- Fork and Clone the repo using
+
+```
+$ git clone https://github.com/cassanisha/QuizGen.git
+$ cd Fantastic-Falcons-1.0
+```
+
+- Change Branch to `webapp` using
+
+```
+$ git checkout webapp
+```
+
+- Setup Virtual environment
+
+```
+$ python3 -m venv env
+```
+
+- Activate the virtual environment
+
+```
+$ source env/bin/activate
+```
+
+- Install dependencies using
+
+```
+$ pip install -r requirements.txt
+```
+
+- Run Flask server using
+
+```
+$ python app.py
+```
