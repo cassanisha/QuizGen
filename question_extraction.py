@@ -39,16 +39,16 @@ class QuestionExtractor:
         Returns:
             * dict
         '''
-        
+        # find candidate keywords
         self.candidate_keywords = self.get_candidate_entities(document)
 
-        
+        # set word scores before ranking candidate keywords
         self.set_tfidf_scores(document)
 
-        
+        # rank the keywords using calculated tf idf scores
         self.rank_keywords()
 
-        
+         # form the questions
         self.form_questions()
 
         return self.questions_dict
