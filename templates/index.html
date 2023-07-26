@@ -55,7 +55,42 @@
             <span class="file-name"> No file uploaded </span>
           </label>
         </div>
-        
+        <script>
+          const fileInput = document.querySelector(
+            "#file-js-example input[type=file]"
+          );
+          fileInput.onchange = () => {
+            if (fileInput.files.length > 0) {
+              const fileName = document.querySelector(
+                "#file-js-example .file-name"
+              );
+              fileName.textContent = fileInput.files[0].name;
+            }
+          };
+        </script>
+        <button class="button has-text-centered is-large is-fullwidth is-dark">
+          <span class="submit has-text-centered" type="submit" name="upload file">Submit</span>
+          <span class="loading"><i class="fa fa-refresh"></i></span>
+          <span class="check"><i class="fa fa-check"></i></span>
+        </button>
+      </form>
+    </div>
+  </main>
+  <script>const button = document.querySelector('.button');
+    const submit = document.querySelector('.submit');
+
+    function toggleClass() {
+      this.classList.toggle('active');
+    }
+
+    function addClass() {
+      this.classList.add('finished');
+    }
+
+    button.addEventListener('click', toggleClass);
+    button.addEventListener('transitionend', toggleClass);
+    button.addEventListener('transitionend', addClass);
+  </script>
 </body>
 
 </html>
