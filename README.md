@@ -35,3 +35,15 @@ This is a smart Quiz Generator that generates a dynamic quiz from any uploaded t
 - **Version Control**: Git and GitHub
 - **Database**: Sqllite3
 
+## How to Get Started?
+
+[![Requirements Up To Date](https://img.shields.io/badge/requirements-up%20to%20date-brightgreen)](QuizGen/requirements.txt)
+[![Python](https://img.shields.io/badge/python-v3.7-blue)](https://www.python.org/)
+
+### GitHub Repository Structure
+
+| S.No. | Branch   | Purpose                            |
+| ----- | -------- | ---------------------------------- |
+| 1.    | [master] | contains the main code             |
+| 2.    | [nlp]    | contains all machine learning code |
+| 3.    | [webapp] | contains all frontend/backend code |
